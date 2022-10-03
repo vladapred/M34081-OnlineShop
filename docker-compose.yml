@@ -4,15 +4,15 @@ services:
   app:
     image: ghcr.io/microservices-itmo-21-22/demo-service:${APP_VERSION:-latest}
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-app:5432/app
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-onlineshop:5432/app
       SPRING_DATASOURCE_USERNAME: app
       SPRING_DATASOURCE_PASSWORD: app
     depends_on:
-      postgres-app:
+      postgres-onlineshop:
         condition: service_healthy
 
-  postgres-app:
-    image: postgres:14-alpine
+  postgres-onlineshop:
+    image: ghcr.io/USERNAME/REPOSITORY
     environment:
       POSTGRES_USER: app
       POSTGRES_DB: app
